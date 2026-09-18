@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh Kumar | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #020d23;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        header {
+            height: 76px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5.2%;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            background: rgba(2, 13, 35, 0.95);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 35px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #168cff;
+        }
+
+        nav {
+            display: flex;
+            gap: 46px;
+            height: 100%;
+            align-items: center;
+        }
+
+        nav a {
+            color: #eeeeee;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #168cff;
+        }
+
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 11px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #168cff;
+            border-radius: 10px;
+            box-shadow: 0 0 12px #168cff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: calc(100vh - 76px);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 45%,
+                rgba(12, 80, 180, 0.18),
+                transparent 40%),
+                #020d23;
+        }
+
+        /* Decorative lines */
+        .lines {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            pointer-events: none;
+        }
+
+        .lines::before,
+        .lines::after {
+            content: "";
+            position: absolute;
+            height: 9px;
+            background: #075fe9;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 12px rgba(0, 110, 255, 0.4);
+        }
+
+        .top-left {
+            top: -30px;
+            left: -35px;
+        }
+
+        .top-left::before {
+            width: 220px;
+            top: 75px;
+            left: -20px;
+        }
+
+        .top-left::after {
+            width: 150px;
+            top: 130px;
+            left: -5px;
+        }
+
+        .bottom-right {
+            right: -35px;
+            bottom: -30px;
+        }
+
+        .bottom-right::before {
+            width: 220px;
+            bottom: 75px;
+            right: -20px;
+        }
+
+        .bottom-right::after {
+            width: 150px;
+            bottom: 130px;
+            right: -5px;
+        }
+
+        /* CONTENT */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 1250px;
+            margin-top: -10px;
+        }
+
+        /* Profile circle */
+        .profile-circle {
+            width: 176px;
+            height: 176px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: linear-gradient(
+                145deg,
+                #1164ec,
+                #0878ed
+            );
+
+            border: 5px solid #57b8ff;
+
+            box-shadow:
+                0 0 15px #168cff,
+                0 0 35px rgba(0, 125, 255, 0.75),
+                inset 0 0 25px rgba(255,255,255,0.08);
+        }
+
+        .profile-circle span {
+            font-size: 65px;
+            font-weight: 800;
+        }
+
+        /* NAME */
+        h1 {
+            font-size: 63px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        h1 .blue {
+            color: #1085f7;
+        }
+
+        /* Department */
+        .department {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .department span {
+            color: #168cff;
+        }
+
+        .divider {
+            margin: 0 20px;
+            color: white;
+        }
+
+        /* Description */
+        .description {
+            font-size: 21px;
+            line-height: 1.7;
+            color: #e0e5ef;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        /* BUTTONS */
+        .buttons {
+            margin-top: 38px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            min-width: 280px;
+            padding: 20px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.3s ease;
+        }
+
+        .primary {
+            color: white;
+            background: linear-gradient(
+                135deg,
+                #087cff,
+                #0872e9
+            );
+
+            box-shadow:
+                0 0 18px rgba(0, 122, 255, 0.4);
+        }
+
+        .secondary {
+            color: white;
+            border: 2px solid #087cff;
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 8px 25px rgba(0, 125, 255, 0.35);
+        }
+
+        .arrow {
+            font-size: 30px;
+            line-height: 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            header {
+                padding: 0 25px;
+            }
+
+            .logo {
+                font-size: 27px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .department {
+                font-size: 30px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                height: auto;
+                min-height: 70px;
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 13px;
+                height: 30px;
+            }
+
+            nav a.active::after {
+                bottom: -3px;
+            }
+
+            .hero {
+                min-height: calc(100vh - 120px);
+            }
+
+            .profile-circle {
+                width: 130px;
+                height: 130px;
+            }
+
+            .profile-circle span {
+                font-size: 45px;
+            }
+
+            h1 {
+                font-size: 31px;
+                line-height: 1.2;
+            }
+
+            .department {
+                font-size: 24px;
+            }
+
+            .description {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 90%;
+                min-width: auto;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">
+            SANTHOSH<span>.</span>
+        </div>
+
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#career">Career Goal</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <!-- Decorative background -->
+        <div class="lines top-left"></div>
+        <div class="lines bottom-right"></div>
+
+        <div class="hero-content">
+
+            <!-- Initials -->
+            <div class="profile-circle">
+                <span>SK</span>
+            </div>
+
+            <!-- Name -->
+            <h1>
+                CHAKALI <span class="blue">SANTHOSH</span> KUMAR
+            </h1>
+
+            <!-- Department -->
+            <div class="department">
+                Department
+                <span class="divider">|</span>
+                <span>CSE</span>
+            </div>
+
+            <!-- Description -->
+            <p class="description">
+                Passionate about programming, software development and continuous learning.
+                <br>
+                Currently building my technical and problem-solving skills for a career in the IT industry.
+            </p>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <a href="#about" class="btn primary">
+                    Explore My Profile
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
