@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chakali Santhosh Kumar | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #00aaff;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00aaff;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+
+            background:
+                radial-gradient(circle at 20% 20%, #00344d 0, transparent 30%),
+                radial-gradient(circle at 80% 80%, #001d2b 0, transparent 30%),
+                #050505;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .profile-circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+
+            border: 3px solid #00aaff;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 45px;
+            font-weight: bold;
+            color: #00aaff;
+
+            box-shadow: 0 0 35px rgba(0,170,255,0.25);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #00aaff;
+        }
+
+        .hero h2 {
+            color: #bbb;
+            font-size: 23px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #999;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            margin: 7px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #00aaff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0088cc;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #00aaff;
+            color: #00aaff;
+        }
+
+        .btn-outline:hover {
+            background: #00aaff;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 30px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading span {
+            color: #00aaff;
+        }
+
+        .section-heading p {
+            color: #777;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #aaa;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .about-text strong {
+            color: white;
+        }
+
+        .info-box {
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item span:first-child {
+            color: #777;
+        }
+
+        .info-item span:last-child {
+            color: #00aaff;
+            text-align: right;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .timeline-card {
+            background: #101010;
+            border-left: 4px solid #00aaff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 0 10px 10px 0;
+            transition: 0.3s;
+        }
+
+        .timeline-card:hover {
+            transform: translateX(8px);
+            background: #141414;
+        }
+
+        .timeline-card h3 {
+            color: #00aaff;
+            margin-bottom: 7px;
+        }
+
+        .timeline-card h4 {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .timeline-card p {
+            color: #999;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .skill {
+            background: #101010;
+            border: 1px solid #222;
+            padding: 28px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #00aaff;
+            transform: translateY(-7px);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .skill h3 {
+            color: #00aaff;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #999;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: #00aaff;
+        }
+
+        .project-top {
+            height: 120px;
+            background: linear-gradient(135deg, #00344d, #00151f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project h3 {
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #999;
+            font-size: 15px;
+        }
+
+        .tech {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #ddd;
+        }
+
+        /* ================= CERTIFICATIONS ================= */
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .certificate {
+            background: #101010;
+            padding: 25px;
+            border: 1px solid #222;
+            border-radius: 10px;
+        }
+
+        .certificate h3 {
+            color: #00aaff;
+        }
+
+        .certificate p {
+            color: #999;
+        }
+
+        /* ================= STRENGTHS ================= */
+
+        .strengths {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .strength {
+            padding: 12px 22px;
+            border: 1px solid #00aaff;
+            border-radius: 30px;
+            color: #ddd;
+            background: #0c0c0c;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 35px;
+        }
+
+        .contact-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item strong {
+            color: #00aaff;
+            display: inline-block;
+            width: 120px;
+        }
+
+        .contact-item span {
+            color: #aaa;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #222;
+            text-align: center;
+            padding: 30px;
+            background: #020202;
+        }
+
+        footer h3 {
+            color: #00aaff;
+            margin-bottom: 5px;
+        }
+
+        footer p {
+            color: #666;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 15px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .info-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .info-item span:last-child {
+                text-align: left;
+            }
+
+            .contact-item strong {
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+    <nav>
+
+        <div class="logo">
+            S<span>K</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="profile-circle">
+            SK
+        </div>
+
+        <h1>
+            Chakali <span>Santhosh Kumar</span>
+        </h1>
+
+        <h2>
+            B.Tech CSE Student | Aspiring Software Developer
+        </h2>
+
+        <p>
+            A passionate Computer Science student focused on Java,
+            Data Structures & Algorithms, Web Development and AWS Cloud.
+            I am continuously building my technical skills and preparing
+            for a career in software development.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-heading">
+
+        <h2>About <span>Me</span></h2>
+
+        <p>Get to know me</p>
+
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <p>
+                Hello! I am <strong>Chakali Santhosh Kumar</strong>,
+                a third-year B.Tech Computer Science and Engineering
+                student at <strong>Dhanalakshmi Srinivasan University</strong>.
+            </p>
+
+            <p>
+                I am passionate about programming and technology.
+                Currently, I am developing my skills in Java,
+                Data Structures and Algorithms, Web Development,
+                SQL and AWS Cloud Computing.
+            </p>
+
+            <p>
+                I believe in continuous learning and practical
+                problem solving. My goal is to become a
+                <strong>professional Software Developer</strong>
+                and work on meaningful real-world projects.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-item">
+                <span>Name</span>
+                <span>Chakali Santhosh Kumar</span>
+            </div>
+
+            <div class="info-item">
+                <span>Degree</span>
+                <span>B.Tech</span>
+            </div>
+
+            <div class="info-item">
+                <span>Department</span>
+                <span>Computer Science & Engineering</span>
+            </div>
+
+            <div class="info-item">
+                <span>Year</span>
+                <span>3rd Year</span>
+            </div>
+
+            <div class="info-item">
+                <span>University</span>
+                <span>Dhanalakshmi Srinivasan University</span>
+            </div>
+
+            <div class="info-item">
+                <span>Career Goal</span>
+                <span>Software Developer</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <div class="section-heading">
+
+        <h2>My <span>Education</span></h2>
+
+        <p>Academic background</p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-card">
+
+            <h3>2024 – Present</h3>
+
+            <h4>B.Tech – Computer Science & Engineering</h4>
+
+            <p>
+                Dhanalakshmi Srinivasan University
+            </p>
+
+            <p>
+                Currently pursuing 3rd Year
+            </p>
+
+        </div>
+
+
+        <div class="timeline-card">
+
+            <h3>Intermediate</h3>
+
+            <h4>Acharya Academy</h4>
+
+            <p>
+                Completed Intermediate education.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-card">
+
+            <h3>10th Standard</h3>
+
+            <h4>Government High School</h4>
+
+            <p>
+                Completed secondary education.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="section-heading">
+
+        <h2>Technical <span>Skills</span></h2>
+
+        <p>Technologies I am learning and practicing</p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <div class="skill-icon">☕</div>
+            <h3>Java</h3>
+            <p>
+                Core Java, OOP, arrays, loops,
+                exception handling and problem solving.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-icon">🧠</div>
+            <h3>DSA</h3>
+            <p>
+                Data Structures and Algorithms
+                with regular programming practice.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>
+                HTML, CSS and JavaScript for
+                developing responsive websites.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-icon">🗄️</div>
+            <h3>SQL & MySQL</h3>
+            <p>
+                Database fundamentals, SQL queries
+                and MySQL concepts.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-icon">☁️</div>
+            <h3>AWS Cloud</h3>
+            <p>
+                EC2, S3, IAM, Lambda, EBS,
+                EFS, RDS and CloudWatch.
+            </p>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-icon">💻</div>
+            <h3>Programming</h3>
+            <p>
+                Logical thinking, coding practice
+                and problem-solving skills.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-heading">
+
+        <h2>Featured <span>Projects</span></h2>
+
+        <p>My learning and development projects</p>
+
+    </div>
+
+
+    <div class="project-grid">
+
+
+        <div class="project">
+
+            <div class="project-top">
+                💼
+            </div>
+
+            <div class="project-content">
+
+                <h3>Student Portfolio</h3>
+
+                <p>
+                    A professional personal portfolio website
+                    showcasing my education, technical skills,
+                    projects and career objective.
+                </p>
+
+                <div class="tech">
+                    HTML • CSS • JavaScript
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-top">
+                ☕
+            </div>
+
+            <div class="project-content">
+
+                <h3>Java Programming Practice</h3>
+
+                <p>
+                    A collection of Java programs developed
+                    to strengthen programming fundamentals,
+                    OOP, arrays, loops and problem solving.
+                </p>
+
+                <div class="tech">
+                    Java • OOP • Problem Solving
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-top">
+                ☁️
+            </div>
+
+            <div class="project-content">
+
+                <h3>AWS Cloud Learning</h3>
+
+                <p>
+                    Practical learning of fundamental AWS
+                    cloud services and cloud computing concepts.
+                </p>
+
+                <div class="tech">
+                    AWS • EC2 • S3 • IAM • RDS
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section>
+
+    <div class="section-heading">
+
+        <h2>Learning & <span>Certifications</span></h2>
+
+        <p>Continuous technical development</p>
+
+    </div>
+
+
+    <div class="certifications">
+
+        <div class="certificate">
+
+            <h3>NPTEL – Programming in Java</h3>
+
+            <p>
+                Learning Java programming, object-oriented
+                programming and advanced Java concepts.
+            </p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>AWS & Cloud Computing</h3>
+
+            <p>
+                Learning cloud computing concepts and
+                fundamental AWS services.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STRENGTHS ================= -->
+
+<section>
+
+    <div class="section-heading">
+
+        <h2>My <span>Strengths</span></h2>
+
+        <p>Personal qualities</p>
+
+    </div>
+
+
+    <div class="strengths">
+
+        <div class="strength">
+            Self-Motivated
+        </div>
+
+        <div class="strength">
+            Quick Learner
+        </div>
+
+        <div class="strength">
+            Problem Solving
+        </div>
+
+        <div class="strength">
+            Consistent Learner
+        </div>
+
+        <div class="strength">
+            Teamwork
+        </div>
+
+        <div class="strength">
+            Adaptability
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAREER OBJECTIVE ================= -->
+
+<section>
+
+    <div class="section-heading">
+
+        <h2>Career <span>Objective</span></h2>
+
+    </div>
+
+    <div class="about-text" style="text-align:center; max-width:850px; margin:auto;">
+
+        <p>
+            To build a successful career as a Software Developer
+            by strengthening my programming, problem-solving and
+            technical skills, while gaining practical experience
+            through real-world projects and continuous learning.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-heading">
+
+        <h2>Contact <span>Me</span></h2>
+
+        <p>Let's connect</p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <div class="contact-item">
+
+            <strong>Name</strong>
+
+            <span>
+                Chakali Santhosh Kumar
+            </span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>Department</strong>
+
+            <span>
+                B.Tech – Computer Science & Engineering
+            </span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>University</strong>
+
+            <span>
+                Dhanalakshmi Srinivasan University
+            </span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>Location</strong>
+
+            <span>
+                Anantapur, Andhra Pradesh, India
+            </span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>Goal</strong>
+
+            <span>
+                Software Developer
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>Chakali Santhosh Kumar</h3>
+
+    <p>
+        B.Tech CSE Student | Aspiring Software Developer
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved
+    </p>
+
+</footer>
+
+</body>
+</html>
